@@ -3,7 +3,6 @@
   width: 90%;
 }
 .lista-cards{
-  margin: 15% 0 0 0; /* Margem temporária (simular espaço onde ficara a edição) */
   width: 100%;
   display: flex;
   align-items: flex-start;
@@ -21,16 +20,16 @@
   border-radius: 1em;
   overflow: hidden;
 }
-.todo{background-color: rgb(215, 59, 59);}
-.todo .titulo-tipo{background-color: rgb(255, 100, 100);}
+.todo{background-color: rgb(224, 89, 89);}
+.todo .cabecalho{background-color: rgb(255, 136, 136);}
 
 .doing{background-color: rgb(216, 216, 73);}
-.doing .titulo-tipo{background-color: rgb(255, 255, 128);}
+.doing .cabecalho{background-color: rgb(255, 255, 128);}
 
 .done{background-color: rgb(74, 194, 94);}
-.done .titulo-tipo{background-color: rgb(136, 255, 156);}
+.done .cabecalho{background-color: rgb(136, 255, 156);}
 
-.titulo-tipo{
+.cabecalho{
   height: 50px;
   width: 100%;
   display: flex;
@@ -38,8 +37,18 @@
   justify-content: center;
   color: rgb(45, 45, 45);
 }
+.cabecalho h1{width: 80%;}
+.cabecalho button{
+  height: 30px;
+  width: 30px;
+  outline: none;
+  border: solid 2px rgb(19, 19, 19);
+  border-radius: .5em;
+  background: none;
+  cursor: pointer;
+}
 
-.todo .card{background: rgb(255, 100, 100);}
+.todo .card{background: rgb(255, 136, 136);}
 .doing .card{background-color: rgb(255, 255, 128);}
 .done .card{background-color: rgb(136, 255, 156);}
 

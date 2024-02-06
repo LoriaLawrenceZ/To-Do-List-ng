@@ -1,6 +1,9 @@
 <article class="lista-cards">
   <section class="todo" (dragover)="onDragOver($event)" (drop)="onDrop($event, 'todo')">
-    <h1 class="titulo-tipo">TO DO</h1>
+    <div class="cabecalho">
+      <h1 class="titulo-tipo">TO DO</h1>
+      <button type="button">+</button>
+    </div>
     <!--Loop for (ngFor)-->
     <div
     *ngFor="let card of filterCards('todo')"
@@ -16,7 +19,10 @@
   </section>
 
   <section class="doing" (dragover)="onDragOver($event)" (drop)="onDrop($event, 'doing')">
-    <h1 class="titulo-tipo">DOING</h1>
+    <div class="cabecalho">
+      <h1 class="titulo-tipo">DOING</h1>
+      <button type="button">+</button>
+    </div>
     <!--Loop for (ngFor)-->
     <!--dragstart lógica para o "drag and drop"-->
     <div
@@ -33,7 +39,10 @@
   </section>
 
   <section class="done" (dragover)="onDragOver($event)" (drop)="onDrop($event, 'done')">
-    <h1 class="titulo-tipo">DONE</h1>
+    <div class="cabecalho">
+      <h1 class="titulo-tipo">DONE</h1>
+      <button type="button">+</button>
+    </div>
     <!--Loop for (ngFor)-->
     <div
     *ngFor="let card of filterCards('done')"
