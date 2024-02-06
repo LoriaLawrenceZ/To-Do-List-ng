@@ -1,10 +1,47 @@
-<section class="lista-cards">
-  <!--Loop for (ngFor)-->
-  <div *ngFor="let card of cards" class="card">
-    <h1 style="width: 100%;">Id Card: {{card.id}}</h1>
-    <span>Descrição: {{card.descricao}}</span>
-    <span>Status: {{card.status}}</span>
-    <button type="button">EDITAR</button>
-    <button type="button">DELETAR</button>
-  </div>
-</section>
+<article class="lista-cards">
+  <section class="todo" (dragover)="onDragOver($event)" (drop)="onDrop($event, 'todo')">
+    <!--Loop for (ngFor)-->
+    <div 
+    *ngFor="let card of filterCards('todo')" 
+    (dragstart)="onDragStart(card)"
+    draggable="true"
+    class="card">
+      <h1 style="width: 100%;">Id Card: {{card.id}}</h1>
+      <span>Descrição: {{card.descricao}}</span>
+      <span>Status: {{card.status}}</span>
+      <button type="button">EDITAR</button>
+      <button type="button">DELETAR</button>
+    </div>
+  </section>
+
+  <section class="doing" (dragover)="onDragOver($event)" (drop)="onDrop($event, 'doing')">
+    <!--Loop for (ngFor)-->
+    <!--dragstart lógica para o "drag and drop"-->
+    <div 
+    *ngFor="let card of filterCards('doing')" 
+    (dragstart)="onDragStart(card)"
+    draggable="true"
+    class="card">
+      <h1 style="width: 100%;">Id Card: {{card.id}}</h1>
+      <span>Descrição: {{card.descricao}}</span>
+      <span>Status: {{card.status}}</span>
+      <button type="button">EDITAR</button>
+      <button type="button">DELETAR</button>
+    </div>
+  </section>
+
+  <section class="done" (dragover)="onDragOver($event)" (drop)="onDrop($event, 'done')">
+    <!--Loop for (ngFor)-->
+    <div 
+    *ngFor="let card of filterCards('done')" 
+    (dragstart)="onDragStart(card)"
+    draggable="true"
+    class="card">
+      <h1 style="width: 100%;">Id Card: {{card.id}}</h1>
+      <span>Descrição: {{card.descricao}}</span>
+      <span>Status: {{card.status}}</span>
+      <button type="button">EDITAR</button>
+      <button type="button">DELETAR</button>
+    </div>
+  </section>
+</article>

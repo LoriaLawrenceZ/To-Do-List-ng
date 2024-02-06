@@ -14,6 +14,7 @@ import { CommonModule } from '@angular/common';
 })
 export class CardsComponent implements OnInit {
   public cards: Card[] = []; // Vetor para armazenar cards
+  currentCard: any; //Variavel p/ drag and drop
 
   // Passa o serviço de Cards no contrutor do componente
   constructor(private _cardService: CardService) {}
@@ -35,5 +36,32 @@ export class CardsComponent implements OnInit {
         );
       });
     });
+  }
+
+  // Filtrar Card
+  filterCards(status: string){
+    return this.cards.filter(m=>m.status == status);
+  }
+
+  // Lógica para drag and drop
+  onDragStart(card: any){
+    console.log('onDragStart');
+    this.currentCard = card;
+  }
+
+  onDragOver(event: any){
+    console.log('onDragOver');
+    event.preventDefault();
+  }
+
+  onDrop(event: any, status: string){
+    console.log('OnDrop');
+    event.preventDefault();
+    const cardDaVez = this.cards.find(m=>m.id == this.currentCard.id);
+    if(cardDaVez != undefined){
+      this._cardService.atualizarCard(cardDaVez.id, cardDaVez);
+      cardDaVez.status = status;
+    }
+    this.currentCard = null;
   }
 }

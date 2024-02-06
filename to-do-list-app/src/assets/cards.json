@@ -3,27 +3,27 @@
     {
       "id": 1,
       "descricao": "Acordar",
-      "status": "To Do"
+      "status": "done"
     },
     {
       "id": 2,
       "descricao": "Comer",
-      "status": "To Do"
+      "status": "doing"
     },
     {
       "id": 3,
       "descricao": "Dormir",
-      "status": "To Do"
+      "status": "todo"
     },
     {
       "id": 4,
       "descricao": "Passear",
-      "status": "To Do"
+      "status": "todo"
     },
     {
       "id": 5,
       "descricao": "Sair",
-      "status": "To Do"
+      "status": "todo"
     }
   ]
 }
