@@ -1,0 +1,8 @@
+<section class="lista-cards">
+  <!--Loop for (ngFor)-->
+  <div *ngFor="let card of cards" class="card">
+    <h1 style="width: 100%;">Id Card: {{card.id}}</h1>
+    <span>Descrição: {{card.descricao}}</span>
+    <span>Status: {{card.status}}</span>
+  </div>
+</section>

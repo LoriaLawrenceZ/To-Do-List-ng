@@ -1,0 +1,17 @@
+:host{
+  min-height: 90vh;
+  width: 90%;
+}
+.lista-cards{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.card{
+  min-height: 150px;
+  width: 100%;
+  margin: 5px;
+  background-color: white;
+}
