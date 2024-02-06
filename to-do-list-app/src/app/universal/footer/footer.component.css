@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(245, 245, 245);
+  background-color: rgb(60, 60, 60);
   box-shadow: 0 10px 20px rgb(0, 0, 0, 0.3);
   bottom: 0;
   transition: all .25s;
@@ -22,6 +22,6 @@
 }
 .repositorio a, .devs a{
   text-decoration: underline;
-  color: rgb(25, 25, 25);
+  color: rgb(245, 245, 245);
   font-size: 24px;
 }
