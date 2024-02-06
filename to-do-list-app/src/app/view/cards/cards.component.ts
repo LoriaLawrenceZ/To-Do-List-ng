@@ -46,7 +46,7 @@ export class CardsComponent implements OnInit {
   // Lógica para drag and drop
   onDragStart(card: any){
     console.log('onDragStart');
-    this.currentCard = card;
+    this.currentCard = card; //declaração do current card para realizar a lógica do drag and drop
   }
 
   onDragOver(event: any){
@@ -62,6 +62,6 @@ export class CardsComponent implements OnInit {
       this._cardService.atualizarCard(cardDaVez.id, cardDaVez);
       cardDaVez.status = status;
     }
-    this.currentCard = null;
+    this.currentCard = null; // "deletando" o current card pra "zerar" o drag and drop (finalizando a ação e suas variaveis)
   }
 }
