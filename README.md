@@ -1,2 +1,2 @@
-# React-To-Do-List
-To-Do List made with React
+# Angular To-Do List
+To-Do List made with Angular
