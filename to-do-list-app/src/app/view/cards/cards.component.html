@@ -1,8 +1,8 @@
 <article class="lista-cards">
-  <section class="todo" (dragover)="onDragOver($event)" (drop)="onDrop($event, 'todo')">
+  <section class="todo" (dragover)="onDragOver($event)" (drop)="onDrop($event, 'todo')" #cardContainer>
     <div class="cabecalho">
       <h1 class="titulo-tipo">TO DO</h1>
-      <button type="button">+</button>
+      <button type="button" (click)="openDialog('todo')">+</button>
     </div>
     <!--Loop for (ngFor)-->
     <div
@@ -18,10 +18,10 @@
     </div>
   </section>
 
-  <section class="doing" (dragover)="onDragOver($event)" (drop)="onDrop($event, 'doing')">
+  <section class="doing" (dragover)="onDragOver($event)" (drop)="onDrop($event, 'doing')" #cardContainer>
     <div class="cabecalho">
       <h1 class="titulo-tipo">DOING</h1>
-      <button type="button">+</button>
+      <button type="button" (click)="openDialog('doing')">+</button>
     </div>
     <!--Loop for (ngFor)-->
     <!--dragstart lógica para o "drag and drop"-->
@@ -38,10 +38,10 @@
     </div>
   </section>
 
-  <section class="done" (dragover)="onDragOver($event)" (drop)="onDrop($event, 'done')">
+  <section class="done" (dragover)="onDragOver($event)" (drop)="onDrop($event, 'done')" #cardContainer>
     <div class="cabecalho">
       <h1 class="titulo-tipo">DONE</h1>
-      <button type="button">+</button>
+      <button type="button" (click)="openDialog('done')">+</button>
     </div>
     <!--Loop for (ngFor)-->
     <div

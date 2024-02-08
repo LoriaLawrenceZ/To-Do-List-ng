@@ -1,0 +1,29 @@
+:host, .modal{
+  min-height: 45vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgb(220, 220, 220);
+}
+.modal-title, .modal-btns{
+  min-height: 8vh;
+  height: 10%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-content-container{
+  min-height: 25vh;
+  height: 80%;
+  width: 90%;
+  background-color: white;
+  border-radius: 1em;
+}
+
+/*Tirando margem padrão do angular nos h1s */
+h1 {
+  margin: 0;
+}

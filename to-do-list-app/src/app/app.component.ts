@@ -4,6 +4,8 @@ import { HeaderComponent } from "./universal/header/header.component";
 import { FooterComponent } from './universal/footer/footer.component';
 import { CardsComponent } from './view/cards/cards.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 @Component({
     selector: 'app-root',
@@ -15,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
       HeaderComponent,
       FooterComponent,
       CardsComponent,
-      HttpClientModule
+      HttpClientModule,
+      MatDialogModule
     ]
 })
 export class AppComponent {

@@ -60,3 +60,8 @@
   background-color: white;
   border-radius: .5em;
 }
+
+/*Tirando margem padrão do angular nos h1s */
+h1 {
+  margin: 0;
+}
