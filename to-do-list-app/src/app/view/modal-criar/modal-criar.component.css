@@ -5,7 +5,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  background-color: rgb(220, 220, 220);
+  background-color: rgb(37, 37, 37);
 }
 .modal-title, .modal-btns{
   min-height: 8vh;
@@ -14,16 +14,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  color: white;
 }
 .modal-content-container{
   min-height: 25vh;
   height: 80%;
-  width: 90%;
-  background-color: white;
+  width: 95%;
+  background-color: rgb(53, 53, 53);
   border-radius: 1em;
 }
 
 /*Tirando margem padrão do angular nos h1s */
 h1 {
   margin: 0;
+}
+
+/*Edição pelo ferramenta de desenvolvedor do browser*/
+input{
+  color: black;
+}
+.example-full-width{
+  width: 100%;
 }

@@ -1,8 +1,26 @@
 <section class="modal">
   <h1 mat-dialog-title class="modal-title">Criar Tarefa</h1>
   <div mat-dialog-content class="modal-content-container">
+    <form>
+      <mat-form-field appearance="fill">
+        <mat-label>Fill form field</mat-label>
+        <input matInput placeholder="Placeholder">
+      </mat-form-field>
+
+      <mat-button-toggle-group aria-label="Tipo de passagem">
+        <mat-button-toggle checked value="todo">To Do</mat-button-toggle>
+        <mat-button-toggle value="doing">Doing</mat-button-toggle>
+        <mat-button-toggle value="done">Done</mat-button-toggle>
+      </mat-button-toggle-group>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Leave a comment</mat-label>
+        <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+      </mat-form-field>
+    </form>
   </div>
   <div mat-dialog-actions class="modal-btns">
     <button mat-dialog-close>FECHAR</button>
+    <button mat-button [mat-dialog-close]="true">CRIAR</button>
   </div>
 </section>
