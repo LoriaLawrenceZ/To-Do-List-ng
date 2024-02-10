@@ -8,7 +8,7 @@ import { ModalCriarComponent } from '../modal-criar/modal-criar.component';
 @Component({
   selector: 'app-cards',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ModalCriarComponent],
   templateUrl: './cards.component.html',
   styleUrl: './cards.component.css',
 })
@@ -20,16 +20,26 @@ export class CardsComponent implements OnInit {
   constructor(private _cardService: CardService, public dialog: MatDialog) {}
 
   // Ao abrir dialoo
-  openDialog(tipo: string) {
-    console.log(tipo);
-
+  openDialog() {
     const dialogReference = this.dialog.open(ModalCriarComponent, {
       width: '100%',
     });
 
     dialogReference.afterOpened().subscribe(() => {});
 
-    dialogReference.afterClosed().subscribe(() => {});
+    dialogReference.afterClosed().subscribe((result) => {
+      if (result) {
+        this._cardService.cadastrarCard(result).subscribe(
+          () => {
+            // Atualizar lista de cards
+            this.listarCards();
+          },
+          (err) => {
+            console.log('Erro ao atualizar', err);
+          }
+        );
+      }
+    });
   }
 
   // Lista os Cards quando inicializado
@@ -52,9 +62,21 @@ export class CardsComponent implements OnInit {
     return this.cards.filter((m) => m.status == status);
   }
 
+  // deletar card
+  deletarCard(id: any) {
+    this._cardService.removerCard(id).subscribe(
+      () => {
+        // Atualizar lista de cards
+        this.listarCards();
+      },
+      (err) => {
+        console.log('Erro ao atualizar', err);
+      }
+    );
+  }
+
   // Lógica para drag and drop
   onDragStart(card: any) {
-    console.log('onDragStart');
     this.currentCard = card; //declaração do current card para realizar a lógica do drag and drop
   }
 
@@ -63,7 +85,6 @@ export class CardsComponent implements OnInit {
   }
 
   onDrop(event: any, status: string) {
-    console.log('OnDrop');
     event.preventDefault();
     const cardDaVez = this.cards.find((m) => m.id == this.currentCard.id);
 

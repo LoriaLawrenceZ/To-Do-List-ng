@@ -1,29 +1,9 @@
 {
   "cards": [
     {
-      "id": "1",
-      "descricao": "Acordar",
-      "status": "doing"
-    },
-    {
-      "id": "2",
-      "descricao": "Comer",
-      "status": "done"
-    },
-    {
-      "id": "3",
-      "descricao": "Dormir",
-      "status": "doing"
-    },
-    {
-      "id": "4",
-      "descricao": "Passear",
-      "status": "done"
-    },
-    {
-      "id": "5",
-      "descricao": "Sair",
-      "status": "doing"
+      "id": 1,
+      "status": "todo",
+      "descricao": "descricao"
     }
   ]
 }

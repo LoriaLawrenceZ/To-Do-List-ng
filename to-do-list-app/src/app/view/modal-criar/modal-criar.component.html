@@ -1,26 +1,37 @@
 <section class="modal">
   <h1 mat-dialog-title class="modal-title">Criar Tarefa</h1>
   <div mat-dialog-content class="modal-content-container">
-    <form>
+    <form (ngSubmit)="criarTarefa()">
       <mat-form-field appearance="fill">
-        <mat-label>Fill form field</mat-label>
-        <input matInput placeholder="Placeholder">
+        <mat-label>Nome Tarefa</mat-label>
+        <input matInput placeholder="Nome Tarefa" [(ngModel)]="nomeTarefa" name="nomeTarefa"/>
       </mat-form-field>
 
-      <mat-button-toggle-group aria-label="Tipo de passagem">
+      <mat-button-toggle-group aria-label="Status da Tarefa" [(ngModel)]="statusTarefa" name="statusTarefa">
         <mat-button-toggle checked value="todo">To Do</mat-button-toggle>
         <mat-button-toggle value="doing">Doing</mat-button-toggle>
         <mat-button-toggle value="done">Done</mat-button-toggle>
       </mat-button-toggle-group>
 
-      <mat-form-field class="example-full-width">
-        <mat-label>Leave a comment</mat-label>
-        <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+      <mat-form-field appearance="fill">
+        <mat-label>ID</mat-label>
+        <input matInput placeholder="ID" [(ngModel)]="idTarefa" name="idTarefa"/>
       </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Descrição</mat-label>
+        <textarea
+          matInput
+          placeholder="Descrição da tarefa..."
+          [(ngModel)]="descricao"
+          name="descricao"
+        ></textarea>
+      </mat-form-field>
+
+      <div mat-dialog-actions class="modal-btns">
+        <button mat-dialog-close>FECHAR</button>
+        <button mat-button type="submit">CRIAR</button>
+      </div>
     </form>
-  </div>
-  <div mat-dialog-actions class="modal-btns">
-    <button mat-dialog-close>FECHAR</button>
-    <button mat-button [mat-dialog-close]="true">CRIAR</button>
   </div>
 </section>

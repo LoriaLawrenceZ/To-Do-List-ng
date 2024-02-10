@@ -19,9 +19,8 @@
 .modal-content-container{
   min-height: 25vh;
   height: 80%;
-  width: 95%;
+  width: 100%;
   background-color: rgb(53, 53, 53);
-  border-radius: 1em;
 }
 
 /*Tirando margem padrão do angular nos h1s */

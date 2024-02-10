@@ -2,7 +2,7 @@
   <section class="todo" (dragover)="onDragOver($event)" (drop)="onDrop($event, 'todo')" #cardContainer>
     <div class="cabecalho">
       <h1 class="titulo-tipo">TO DO</h1>
-      <button type="button" (click)="openDialog('todo')">+</button>
+      <button type="button" (click)="openDialog()">+</button>
     </div>
     <!--Loop for (ngFor)-->
     <div
@@ -14,14 +14,14 @@
       <span>Descrição: {{card.descricao}}</span>
       <span>Status: {{card.status}}</span>
       <button type="button">EDITAR</button>
-      <button type="button">DELETAR</button>
+      <button type="button" (click)="deletarCard(card.id)">DELETAR</button>
     </div>
   </section>
 
   <section class="doing" (dragover)="onDragOver($event)" (drop)="onDrop($event, 'doing')" #cardContainer>
     <div class="cabecalho">
       <h1 class="titulo-tipo">DOING</h1>
-      <button type="button" (click)="openDialog('doing')">+</button>
+      <button type="button" (click)="openDialog()">+</button>
     </div>
     <!--Loop for (ngFor)-->
     <!--dragstart lógica para o "drag and drop"-->
@@ -34,14 +34,14 @@
       <span>Descrição: {{card.descricao}}</span>
       <span>Status: {{card.status}}</span>
       <button type="button">EDITAR</button>
-      <button type="button">DELETAR</button>
+      <button type="button" (click)="deletarCard(card.id)">DELETAR</button>
     </div>
   </section>
 
   <section class="done" (dragover)="onDragOver($event)" (drop)="onDrop($event, 'done')" #cardContainer>
     <div class="cabecalho">
       <h1 class="titulo-tipo">DONE</h1>
-      <button type="button" (click)="openDialog('done')">+</button>
+      <button type="button" (click)="openDialog()">+</button>
     </div>
     <!--Loop for (ngFor)-->
     <div
@@ -53,7 +53,7 @@
       <span>Descrição: {{card.descricao}}</span>
       <span>Status: {{card.status}}</span>
       <button type="button">EDITAR</button>
-      <button type="button">DELETAR</button>
+      <button type="button" (click)="deletarCard(card.id)">DELETAR</button>
     </div>
   </section>
 </article>
