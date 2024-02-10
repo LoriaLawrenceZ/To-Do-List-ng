@@ -1,24 +1,41 @@
 <article class="lista-cards">
-  <section class="todo" (dragover)="onDragOver($event)" (drop)="onDrop($event, 'todo')" #cardContainer>
+  <section
+    class="todo"
+    (dragover)="onDragOver($event)"
+    (drop)="onDrop($event, 'todo')"
+    #cardContainer
+  >
     <div class="cabecalho">
       <h1 class="titulo-tipo">TO DO</h1>
       <button type="button" (click)="openDialog()">+</button>
     </div>
     <!--Loop for (ngFor)-->
     <div
-    *ngFor="let card of filterCards('todo')"
-    (dragstart)="onDragStart(card)"
-    draggable="true"
-    class="card">
-      <h1 style="width: 100%;">Id Card: {{card.id}}</h1>
-      <span>Descrição: {{card.descricao}}</span>
-      <span>Status: {{card.status}}</span>
-      <button type="button">EDITAR</button>
-      <button type="button" (click)="deletarCard(card.id)">DELETAR</button>
+      *ngFor="let card of filterCards('todo')"
+      (dragstart)="onDragStart(card)"
+      draggable="true"
+      class="card"
+    >
+      <div class="card-header">
+        <h1 style="width: 100%">Id: {{ card.id }}</h1>
+        <div class="card-header-btns">
+          <button type="button">EDIT</button>
+          <button type="button" (click)="deletarCard(card.id)">X</button>
+        </div>
+      </div>
+      <div class="card-body">
+        <span>Descrição: {{ card.descricao }}</span>
+        <span>Status: {{ card.status }}</span>
+      </div>
     </div>
   </section>
 
-  <section class="doing" (dragover)="onDragOver($event)" (drop)="onDrop($event, 'doing')" #cardContainer>
+  <section
+    class="doing"
+    (dragover)="onDragOver($event)"
+    (drop)="onDrop($event, 'doing')"
+    #cardContainer
+  >
     <div class="cabecalho">
       <h1 class="titulo-tipo">DOING</h1>
       <button type="button" (click)="openDialog()">+</button>
@@ -26,34 +43,53 @@
     <!--Loop for (ngFor)-->
     <!--dragstart lógica para o "drag and drop"-->
     <div
-    *ngFor="let card of filterCards('doing')"
-    (dragstart)="onDragStart(card)"
-    draggable="true"
-    class="card">
-      <h1 style="width: 100%;">Id Card: {{card.id}}</h1>
-      <span>Descrição: {{card.descricao}}</span>
-      <span>Status: {{card.status}}</span>
-      <button type="button">EDITAR</button>
-      <button type="button" (click)="deletarCard(card.id)">DELETAR</button>
+      *ngFor="let card of filterCards('doing')"
+      (dragstart)="onDragStart(card)"
+      draggable="true"
+      class="card"
+    >
+      <div class="card-header">
+        <h1 style="width: 100%">Id: {{ card.id }}</h1>
+        <div class="card-header-btns">
+          <button type="button">EDIT</button>
+          <button type="button" (click)="deletarCard(card.id)">X</button>
+        </div>
+      </div>
+      <div class="card-body">
+        <span>Descrição: {{ card.descricao }}</span>
+        <span>Status: {{ card.status }}</span>
+      </div>
     </div>
   </section>
 
-  <section class="done" (dragover)="onDragOver($event)" (drop)="onDrop($event, 'done')" #cardContainer>
+  <section
+    class="done"
+    (dragover)="onDragOver($event)"
+    (drop)="onDrop($event, 'done')"
+    #cardContainer
+  >
     <div class="cabecalho">
       <h1 class="titulo-tipo">DONE</h1>
       <button type="button" (click)="openDialog()">+</button>
     </div>
     <!--Loop for (ngFor)-->
     <div
-    *ngFor="let card of filterCards('done')"
-    (dragstart)="onDragStart(card)"
-    draggable="true"
-    class="card">
-      <h1 style="width: 100%;">Id Card: {{card.id}}</h1>
-      <span>Descrição: {{card.descricao}}</span>
-      <span>Status: {{card.status}}</span>
-      <button type="button">EDITAR</button>
-      <button type="button" (click)="deletarCard(card.id)">DELETAR</button>
+      *ngFor="let card of filterCards('done')"
+      (dragstart)="onDragStart(card)"
+      draggable="true"
+      class="card"
+    >
+      <div class="card-header">
+        <h1 style="width: 100%">Id: {{ card.id }}</h1>
+        <div class="card-header-btns">
+          <button type="button">EDIT</button>
+          <button type="button" (click)="deletarCard(card.id)">X</button>
+        </div>
+      </div>
+      <div class="card-body">
+        <span>Descrição: {{ card.descricao }}</span>
+        <span>Status: {{ card.status }}</span>
+      </div>
     </div>
   </section>
 </article>

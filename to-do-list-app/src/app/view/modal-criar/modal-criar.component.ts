@@ -39,7 +39,7 @@ export class ModalCriarComponent {
 
   ngOnInit() {
     this._cardsService.getCards().subscribe((cards) => {
-      this.idsExistentes = cards.map((card) => card.id);
+      this.idsExistentes = cards.map((card) => parseInt(card.id));
     });
   }
 
@@ -59,13 +59,13 @@ export class ModalCriarComponent {
       console.log('Descrição:', this.descricao);
 
       const novoCard: Card = {
-        id: parseInt(this.idTarefa),
+        id: this.idTarefa,
         status: this.statusTarefa,
         descricao: this.descricao,
       };
 
       //console.log(this.idsExistentes);
-      if (this.idsExistentes.includes(novoCard.id)) {
+      if (this.idsExistentes.includes(parseInt(novoCard.id))) {
         alert('Já existe uma tarefa com este id!');
       } else {
         // Close the dialog

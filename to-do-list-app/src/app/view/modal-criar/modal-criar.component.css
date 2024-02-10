@@ -23,6 +23,14 @@
   background-color: rgb(53, 53, 53);
 }
 
+.form-top{
+  height: 30%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
 /*Tirando margem padrão do angular nos h1s */
 h1 {
   margin: 0;
@@ -34,4 +42,22 @@ input{
 }
 .example-full-width{
   width: 100%;
+}
+
+.x-sair{
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 30px;
+  font-weight: bolder;
 }
